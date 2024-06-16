@@ -1,71 +1,159 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <title>HTML 기초</title>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생일 축하해, [아들의 이름]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        .welcome-message {
+            margin: 20px 0;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .mySlides img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        .mySlides {
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+        .mySlides:nth-child(1) {display: block; animation-delay: 0s;}
+        .mySlides:nth-child(2) {animation-delay: 4s;}
+        .mySlides:nth-child(3) {animation-delay: 8s;}
+        .timeline {
+            position: relative;
+            margin: 20px auto;
+            padding: 20px 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #ff6347;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-entry {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-entry.left {
+            left: 0;
+        }
+        .timeline-entry.right {
+            left: 50%;
+        }
+        .timeline-entry::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #ff6347;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-entry.right::after {
+            left: -16px;
+        }
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+    </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLWZ9HL2TK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WLWZ9HL2TK');
-</script>
 <body>
-  <h1><a href="index.html">WEB</a></h1>
-  <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
-  </ol>
-  <ul>
-    <li>John Hong</li>
-    <li>박재홍</li>
-  </ul>
-  <h1>HTML</h1>
-  <p><a href="https://www.w3.org/TR/html5/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
-  <br><br>
-  <img src="test.jpg" width="50%">
-  </p>
-  <p style="margin-top:45px;">HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. 
-  </p>
-  <p>
-    <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://https-thanks2you-github-io-web1.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </p>
-  <P>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6539e0a1f2439e1631e87ae5/1hdl1augo';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
-  </P>
+
+    <!-- 환영 메시지 -->
+    <div class="welcome-message">
+        <h1>생일 축하해, [아들의 이름]!</h1>
+        <p>사랑하는 [아들의 이름], 네가 태어난 지 벌써 [나이]년이 되었구나. 우리 가족 모두 너를 너무나 사랑하고 자랑스러워한단다. 특별한 오늘, 네가 항상 행복하고 건강하길 바라며, 이 페이지를 통해 우리의 사랑을 담아 네 생일을 축하하고자 해.</p>
+    </div>
+
+    <!-- 사진 슬라이드쇼 -->
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="image1.jpg" alt="사진 1">
+        </div>
+        <div class="mySlides">
+            <img src="image2.jpg" alt="사진 2">
+        </div>
+        <div class="mySlides">
+            <img src="image3.jpg" alt="사진 3">
+        </div>
+    </div>
+
+    <!-- 성장 타임라인 -->
+    <div class="timeline">
+        <div class="timeline-entry left">
+            <div class="timeline-content">
+                <h3>200X년 X월 X일</h3>
+                <p>[아들의 이름]이 태어났어요!</p>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-content">
+                <h3>200X년 X월 X일</h3>
+                <p>첫 걸음마를 떼었어요!</p>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-content">
+                <h3>200X년 X월 X일</h3>
+                <p>첫 생일을 맞이했어요!</p>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-content">
+                <h3>200X년 X월 X일</h3>
+                <p>유치원에 입학했어요!</p>
+            </div>
+        </div>
+        <div class="timeline-entry left">
+            <div class="timeline-content">
+                <h3>200X년 X월 X일</h3>
+                <p>초등학교에 입학했어요!</p>
+            </div>
+        </div>
+        <div class="timeline-entry right">
+            <div class="timeline-content">
+                <h3>2024년 X월 X일</h3>
+                <p>[나이]번째 생일을 축하해요!</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
